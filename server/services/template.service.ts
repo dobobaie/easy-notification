@@ -20,7 +20,7 @@ export interface ITemplate {
 export default class TemplateService extends AServices {
   public process(templateName: string, metadata: any): ITemplate {
     const config: IConfig = Provider.get<IConfig>('config');
-    const { language } = metadata;
+    const { language, payload } = metadata;
 
     // ---
     const tplDir: string = config.mailer.template.path + '/' + templateName;
@@ -47,7 +47,8 @@ export default class TemplateService extends AServices {
     const renderer: string = Mustache.render(tplMjml, {
       _: {
         ...tplLang
-      }
+      },
+      ...payload
     });
     const { html }: any = mjml2html(renderer);
 

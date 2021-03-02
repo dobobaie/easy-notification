@@ -60,6 +60,8 @@
           <span style="font-size:20px; font-weight:bold">{{ _.TITLE }}</span>
           <br />
           <span style="font-size:15px">{{ _.DESCRIPTION }}</span>
+          <br />
+          <a href="{{{ url }}}" target="_blank">{{ _.CLICK_HERE }}</a>
         </mj-text>
       </mj-column>
     </mj-section>

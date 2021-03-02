@@ -61,5 +61,6 @@ export default (app: IProviderApp): void => {
   // Actions
   subscribe('*');
   subscribe('reset-password');
-  subscribe('member-confirmation');
+  subscribe('confirm-account');
+  subscribe('confirm-member');
 };
