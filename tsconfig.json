@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "es2018",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": ["esnext", "esnext.asynciterable", "dom", "es2015"],
+    "esModuleInterop": true,
+    "allowJs": true,
+    "sourceMap": true,
+    "strict": true,
+    "noEmit": true,
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"],
+      "@app/*": ["./src/app/*"],
+      "@/*": ["./src/lib/src/*"]
+    },
+    "types": [
+      "jest",
+      "@types/jest",
+      "@types/node",
+      "@types/express",
+      "@types/shortid",
+      "@types/bluebird",
+      "@types/supertest"
+    ]
+  },
+  "exclude": ["node_modules", ".nuxt", "dist", "dist-server"]
+}

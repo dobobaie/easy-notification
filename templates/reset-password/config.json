@@ -1,0 +1,4 @@
+{
+  "subject": "RESET_PASSWORD",
+  "template_url": "./index.mjml"
+}

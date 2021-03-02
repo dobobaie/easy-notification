@@ -1,0 +1,3 @@
+[submodule "server/backend-lib"]
+	path = server/backend-lib
+	url = git@github.com:dobobaie/authenticate-backend-lib.git
