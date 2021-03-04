@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "scripts": {
     "init": "env-cmd -f .env node initialization/entrypoint.js",
+    "env": "env-cmd -f .env",
     "watch": "tsc --watch -p ./server",
-    "start": "env-cmd -f .env concurrently \"npm run serve\" \"npm run watch\"",
-    "serve": "env-cmd -f .env nodemon dist-server/main.js",
+    "start": "concurrently \"npm run serve\" \"npm run watch\"",
+    "serve": "nodemon dist-server/main.js",
     "build": "npm run build-server",
     "build-server": "tsc -p ./server",
     "git:reset": "git fetch --all && git reset --hard --recurse-submodules && git checkout master && git pull --rebase && git submodule update --rebase --remote --recursive",
@@ -13,9 +14,9 @@
     "lint-staged": "lint-staged",
     "pretty": "pretty-quick --staged",
     "test": "ava",
-    "test:unit": "env-cmd -f .env ava ./test/specs/**/*",
-    "test:e2e": "env-cmd -f .env ava ./test/e2e/**/*",
-    "test:jest:e2e": "env-cmd -f .env jest ./test/e2e/*.spec.ts ./test/e2e/**/*.spec.ts --maxWorkers=1"
+    "test:unit": "ava ./test/specs/**/*",
+    "test:e2e": "ava ./test/e2e/**/*",
+    "test:jest:e2e": "jest ./test/e2e/*.spec.ts ./test/e2e/**/*.spec.ts --maxWorkers=1"
   },
   "lint-staged": {
     "*.{ts,js,vue}": "npm run lint",
