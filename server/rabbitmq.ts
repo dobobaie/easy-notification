@@ -52,7 +52,7 @@ export default (app: IProviderApp): void => {
           });
         } catch (e) {
           console.log(e);
-          // SEND AGAIN
+          // SEND AGAIN ?
           throw new Error('internal_notification_error');
         }
       }

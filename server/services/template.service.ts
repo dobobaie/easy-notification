@@ -25,6 +25,7 @@ export default class TemplateService extends AServices {
     // ---
     const tplDir: string = config.mailer.template.path + '/' + templateName;
     if (templateName === '' || !fs.existsSync(tplDir)) {
+      console.log('Template', tplDir);
       throw new Error('template_not_found');
     }
 

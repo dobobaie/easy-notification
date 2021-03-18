@@ -13,7 +13,8 @@ COPY package-lock.json package-lock.json
 
 # COPY . .
 
-COPY node_modules node_modules
+# COPY node_modules node_modules
+RUN yarn install
 # RUN npm install
 
 RUN npm run build
