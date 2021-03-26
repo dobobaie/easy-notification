@@ -14,11 +14,6 @@ interface IStaticConfig {
   postgres: {
     port: number;
   };
-  mailer: {
-    template: {
-      path: string;
-    };
-  };
   typeorm: {
     type: string;
     debug: boolean;
@@ -103,11 +98,6 @@ export default (env: NodeJS.ProcessEnv): IConfig => {
     postgres: {
       port: 5432
     },
-    mailer: {
-      template: {
-        path: path.join(__dirname, '/../../templates')
-      }
-    },
     typeorm: {
       type: 'postgres',
       debug: false,
@@ -162,7 +152,7 @@ export default (env: NodeJS.ProcessEnv): IConfig => {
     mailer: {
       sender: env.MAILER_SENDER || '',
       template: {
-        path: cstatic.mailer.template.path
+        path: env.MAILER_TEMPLATE_PATH || ''
       },
       mailjet: {
         host: env.MAILER_MAILJET_HOST || '',
@@ -198,6 +188,7 @@ export default (env: NodeJS.ProcessEnv): IConfig => {
       cdynamic.postgres.db &&
       cdynamic.postgres.user &&
       cdynamic.mailer.sender &&
+      cdynamic.mailer.template.path &&
       cdynamic.mailer.mailjet.host &&
       cdynamic.mailer.mailjet.user &&
       cdynamic.mailer.mailjet.pass
