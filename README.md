@@ -19,27 +19,26 @@
 
 ```bash
 # install dependencies
-$ npm install
+$ yarn install
 $ git submodule update --init --recursive
 
 # initialize the project (SQL)
-$ npm run init # ONLY IF TYPEORM IS NOT SYNC
+$ yarn init # ONLY IF TYPEORM IS NOT SYNC
 
 # serve with hot reload at localhost:3000
-$ npm run watch
-$ npm run serve
+$ yarn dev
 ```
 
 ### Build Setup for production
 
 ```bash
 # build for production and launch server
-$ npm run build
-$ npm run start
+$ yarn build
+$ yarn start
 ```
 
 ### Remettre à jour le projet
 
 ```bash
-npm run git-reset
+yarn git:reset
 ```
