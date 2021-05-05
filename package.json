@@ -6,12 +6,10 @@
   },
   "scripts": {
     "init": "node initialization/entrypoint.js",
-    "routes": "node ./node_modules/tsoa/dist/cli.js routes",
-    "swagger": "node ./node_modules/tsoa/dist/cli.js swagger",
     "start": "node $npm_package_env_dist_main_path",
     "start-nuxt": "nuxt start",
     "dev": "concurrently \"yarn serve\" \"yarn watch\"",
-    "compile": "npm run routes && npm run build && npm run build-nuxt",
+    "compile": "npm run build && npm run build-nuxt",
     "build": "tsc -p ./server",
     "build-nuxt": "nuxt build",
     "watch": "yarn build -- --watch",
