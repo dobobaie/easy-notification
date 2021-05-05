@@ -12,7 +12,7 @@
     "start-nuxt": "nuxt start",
     "dev": "concurrently \"yarn serve\" \"yarn watch\"",
     "compile": "npm run routes && npm run build && npm run build-nuxt",
-    "build": "tsc -p ./src",
+    "build": "tsc -p ./server",
     "build-nuxt": "nuxt build",
     "watch": "yarn build -- --watch",
     "serve": "nodemon $npm_package_env_dist_main_path",

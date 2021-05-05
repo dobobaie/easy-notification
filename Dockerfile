@@ -11,3 +11,5 @@ COPY tsconfig.json tsconfig.json
 
 # COPY initialization initialization
 # ENTRYPOINT ["sh", "initialization/docker-entrypoint.sh"]
+
+RUN yarn build
