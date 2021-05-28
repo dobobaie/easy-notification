@@ -38,7 +38,7 @@ export default class TemplateService extends AServices {
 
     // ---
     const tplLangRaw: string = fs
-      .readFileSync(path.join(tplDir, '/i18n/', language, '.json'))
+      .readFileSync(path.join(tplDir, '/i18n/', language + '.json'))
       .toString();
     const tplLang: any = JSON.parse(tplLangRaw);
 
@@ -46,17 +46,21 @@ export default class TemplateService extends AServices {
     const tplMjml: string = fs
       .readFileSync(path.join(tplDir, tplConfig.template_url))
       .toString();
+
+    // ---
     const renderer: string = Mustache.render(tplMjml, {
       _: {
-        ...tplLang
+        ...tplLang,
       },
-      ...payload
+      ...payload,
     });
+
+    // ---
     const { html }: any = mjml2html(renderer);
 
     return {
       subject: tplLang[tplConfig.subject],
-      html
+      html,
     };
   }
 }
